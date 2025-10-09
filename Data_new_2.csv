@@ -1,0 +1,4 @@
+Index,Smiles,Type,Type_Index
+802,Oc1c(-c2ccccc2)cc2ccc(-c3ccccc3)cc2c1-c1c(O)c(-c2ccccc2)cc2ccc(-c3ccccc3)cc12,Binol,802
+803,Oc1ccc2c(-c3ccccc3)cccc2c1-c1c(O)ccc2c(-c3ccccc3)cccc12,Binol,803
+804,COc1c(C)cc(O)c(-c2c(O)ccc3ccccc23)c1C,Binol,804

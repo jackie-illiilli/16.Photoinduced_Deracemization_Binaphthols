@@ -1,0 +1,3 @@
+sh: 行 1: 42529 已放弃               (吐核)xtb tmpcoord --gfn2 --opt > xtb.out 2> /dev/null
+sh: 行 1: 42664 已放弃               (吐核)xtb tmpcoord --gfn2 --opt > xtb.out 2> /dev/null
+sh: 行 1: 42813 已放弃               (吐核)xtb tmpcoord --gfn2 --opt > xtb.out 2> /dev/null

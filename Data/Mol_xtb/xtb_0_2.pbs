@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=28
+#PBS -l walltime=99:00:00
+#PBS -N crest-
+#PBS -q gamma
+#PBS -j oe
+#PBS -o jobID.$PBS_JOBID
+export OMP_NUM_THREADS=28
+export MKL_NUM_THREADS=28
+export OMP_STACKSIZE=6000m
+
+cd $PBS_O_WORKDIR
+touch jobID.$PBS_JOBID
+rootdir=charg_0_2
+folders=`ls $PBS_O_WORKDIR/$rootdir/`
+for folder in $folders
+do
+    cd $PBS_O_WORKDIR/$rootdir/$folder
+    crest $folder.xyz -T 28 -gfn2 -chrg 0 -uhf 0 -rthr 0.25 -shake 1 --mdlen 0.5 > crest.out
+done
