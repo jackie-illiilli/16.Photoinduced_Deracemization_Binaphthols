@@ -1,12 +1,11 @@
-import glob, os, shutil, itertools, copy
+import glob, os, shutil
 from rdkit import Chem
 from rdkit.Chem import AllChem
-from rdkit.Geometry import Point3D
 import numpy as np
 from tqdm import tqdm
 import pandas as pd
 from matplotlib import pyplot as plt
-from . import logfile_process, FormatConverter, xtb_process, mol_manipulation, Tool
+from . import logfile_process, FormatConverter, xtb_process
 
 def Single_Xtb(root_file, result_file, shift_to_sugan=False):
     """Produces xtb optimization files for single molecules
@@ -138,10 +137,111 @@ def SPE_DFT_calc_wfn(target_dir, opt_name="Reactants", eng_name='Reactants_eng',
             FormatConverter.block_to_gjf(symbol_list, position, new_log_name, charge, opt_log.multiplicity, title,
                         method=method, final_line=wfn_name)
 
+def error_improve(target_dir, mol_dir, file_name, dust_bin='dust_bin', improve_dir='improve', bond_attach_std='mol', maxcycles=0, method=None, bond_addition_function=None, bond_ignore_list=None, Inv_dir = 'Inv3', yqc_dir = 'yqc'):
+    """
+    Works in conjunction with the log_process module to identify and modify errors in Gaussian output files,
+    handling imaginary frequency issues. Modified input files and output files with calculation errors or
+    imaginary frequencies will be moved to specified folders.
 
-# Constants
-M_L_DIST = 1.96
-OPT_METHOD = "OPT B3LYP/6-31G* SCRF(SOLVENT=Chloroform)"
+    Args:
+        target_dir (str): Root directory
+        mol_dir (str): Directory corresponding to the Mol molecule
+        file_name (str): Folder in the root directory containing Gaussian output files
+        dust_bin (str, optional): Trash bin for irreparable output files. Defaults to 'dust_bin'.
+        improve_dir (str, optional): Directory for storing modified Gaussian input files. Defaults to 'improve'.
+        bond_attach_std (str, optional): Standard for bond attachment. Defaults to 'mol'.
+        maxcycles (int, optional): Maximum number of optimization cycles. Defaults to 0.
+        method (str, optional): Optimization method. Defaults to None.
+        bond_addition_function (callable, optional): Function for adding bonds. Defaults to None.
+        bond_ignore_list (list, optional): List of bonds to ignore. Defaults to None.
+        Inv_dir (str, optional): Directory for inversion calculations. Defaults to 'Inv3'.
+        yqc_dir (str, optional): Directory for YQC calculations. Defaults to 'yqc'.
+    """
+    # Construct paths for directories
+    opt_file_dir = target_dir + "/" + file_name
+    dust_bin_dir = target_dir + "/" + dust_bin
+    improve_dir_ = target_dir + "/" + improve_dir
+    Inv_dir_ = target_dir + "/" + Inv_dir
+    yqc_dir_ = target_dir + "/" + yqc_dir
+    mol_files = glob.glob(mol_dir + "/*.mol")
+    
+    for mol_file in mol_files:
+        try:
+            print("process %s" % mol_file, end='\r')
+            # Find corresponding log files for the mol file
+            log_files = glob.glob(opt_file_dir + "/" + os.path.split(mol_file)[-1].split(".")[0] + "*.log")
+            if len(log_files) == 0:
+                continue 
+            for log_file in log_files:
+                fail = 0
+                with open(log_file, "r") as f:
+                    lines = f.readlines()
+                if len(lines) <= 15:
+                    # File is too short, likely incomplete
+                    fail = 2
+                else:
+                    # Process the log file using logfile_process
+                    opt_log = logfile_process.Logfile(log_file, mol_file_dir=mol_file, bond_attach_std=bond_attach_std, bond_addition_function=bond_addition_function, bond_ignore_list=bond_ignore_list)
+                    if opt_log.multiplicity <= 0:  # or opt_log.S_2 < 0:
+                        # Invalid multiplicity
+                        fail = 1
+                    elif not opt_log.bond_attach:
+                        # Bond attachment failed
+                        fail = 1
+                    elif opt_log.file_type == "OM" and opt_log.unreal_freq == 0:
+                        print("%s may not be a right OM for unreal freq num of %d" % (opt_log.file_dir, opt_log.unreal_freq))
+                        # fail = 1
+                    elif opt_log.file_type == "TS":
+                        if opt_log.unreal_freq >= 0 and opt_log.unreal_freq != 1:  # or not opt_log.is_right_ts:
+                            print("%s is not a right TS for unreal freq num of %d" % (opt_log.file_dir, opt_log.unreal_freq))
+                            if opt_log.unreal_freq == 0:
+                                fail = 1
+                            else:
+                                opt_log.is_normal_end = 0
+                                opt_log.error_reason = ""
+                    if opt_log.file_type == "IRC":
+                        if opt_log.irc_result == False:
+                            # IRC calculation failed
+                            fail = 1
+                        else:
+                            continue
+                    # except:
+                    #     fail = 2 
+                    
+                if fail == 1:
+                    # Move failed files to dust bin
+                    new_log_name = dust_bin_dir + "/" + os.path.split(log_file)[-1] 
+                    # new_log_name =  new_log_name.split(".")[0] + "%s.log" % opt_log.file_type
+                    if not os.path.isdir(dust_bin_dir):
+                        os.mkdir(dust_bin_dir) 
+                    shutil.move(log_file, new_log_name)
+                    continue
+                if fail == 2:
+                    # Move incomplete files to improve directory for manual fixing
+                    new_log_name = improve_dir_ + "/" + os.path.split(log_file)[-1] 
+                    if not os.path.isdir(improve_dir_):
+                        os.mkdir(improve_dir_) 
+                    shutil.move(log_file, new_log_name)
+                    gjf_file = log_file.split(".")[0] + ".gjf"
+                    new_gjf_name = improve_dir_ + "/" + os.path.split(gjf_file)[-1] 
+                    shutil.move(gjf_file, new_gjf_name)
+                    continue
+                new_log_name = target_dir + '/' + improve_dir
+                savechk = None
+                readchk = None
+                # if opt_log.file_type == "OM":
+                #     savechk = os.path.split(log_file)[-1].split(".")[0]
+                # if opt_log.file_type == "TS":
+                #     readchk = os.path.split(log_file)[-1].split(".")[0]
+                if not opt_log.normal_end:
+                    # Solve errors in the log file and generate improved version
+                    opt_log.solve_error_logfile(new_log_name, Inv_dir=Inv_dir_, yqc_dir=yqc_dir_, savechk=savechk, readchk=readchk, maxcycles=maxcycles, method=method)
+                elif opt_log.unreal_freq and opt_log.file_type not in ["OM", "TS"]:
+                    # Handle imaginary frequencies for non-OM/TS files
+                    opt_log.unreal_freq_improve(new_log_name, savechk=savechk, readchk=readchk, method=method)
+        except:
+            # Skip on any exception during processing
+            continue
 
 
 def load_and_prepare_mol(ligand_idx: int, conf_id: int, mol_dir: str, dft_dir: str):
