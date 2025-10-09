@@ -564,3 +564,40 @@ def normalize_axis(arr, axis=0, mean=[], std=[]):
     normalized_arr = np.nan_to_num(normalized_arr, 0)
     return normalized_arr, mean, std
 
+def read_reaction_csv(file_path = "Data/Second_result copy.csv", target_csv="Data_clear_with_sites.csv"):
+    data_csv = pd.read_csv(file_path)
+    data_csv.reset_index(drop=True, inplace=True)
+    smiles_csv = pd.read_csv(target_csv)
+    indexs = smiles_csv["Index"].to_list()
+    data_csv["Binol_smiles"] = [smiles_csv["Smiles"][indexs.index(each["Binol"])] for id, each in data_csv.iterrows()]
+    data_csv["Ligand_smiles"] = [smiles_csv["Smiles"][indexs.index(each["Ligand"])] for id, each in data_csv.iterrows()]
+    return data_csv
+def descriptor_to_array(df, descriptor_map, dicts=[]):
+    desc_array = []
+    for line_id, line in df.iterrows():
+        L_Smiles = line['Ligand_smiles']
+        Bip_Smiles = line['Binol_smiles']
+        L_id = line['Ligand']
+        B_id = line['Binol']
+        L_list, Bip_list, L_dict, B_dict = [], [], [], []
+        all_array = np.array([])
+        if descriptor_map != None:
+            L_list = np.array(descriptor_map[L_Smiles])
+            Bip_list = np.array(descriptor_map[Bip_Smiles])
+        if len(dicts) != 0:
+            for each_dict in dicts:
+                L_dict = each_dict[L_id]
+                B_dict = each_dict[B_id]
+                all_array = np.concatenate((all_array, L_dict, B_dict), axis=0)
+        all_array = np.concatenate((all_array, L_list, Bip_list), axis=0)
+        desc_array.append(all_array)
+    desc_array = np.array(desc_array)
+    return desc_array
+def get_reverse_result(desc_arrays):
+    first_num = len(desc_arrays[0]) - 64
+    result = []
+    new_results = list(range(48, 64)) + list(range(32, 48)) + list(range(16, 32)) + list(range(0, 16))
+    new_results = list(range(first_num)) + list(np.array(new_results) + first_num)
+    for desc_array in desc_arrays:
+        result.append(desc_array[new_results])
+    return np.array(result)
