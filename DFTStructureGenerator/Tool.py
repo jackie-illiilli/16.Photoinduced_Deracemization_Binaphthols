@@ -4,7 +4,9 @@ import math, os, shutil
 import numpy as np
 import pandas as pd
 from rdkit import Chem
-
+from matplotlib import pyplot as plt
+import seaborn as sns
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 
 def find_first_line(fileline, find_str, find_type="start"):
     assert find_type in ['start', 'end', 'all', 'in']
@@ -162,48 +164,100 @@ def GetSpinMultiplicity(Mol, CheckMolProp = True):
 def stablize_smileses(smiles_list):
     return [Chem.MolToSmiles(Chem.MolFromSmiles(each)) for each in smiles_list]
 
-def Calc_areas_(mol, excluded_atoms_ids=[], num_per_axis=20, radius=8, count_per_axis = [2,2,2]):
-    # 非均匀格点积分
-    table = Chem.rdchem.GetPeriodicTable()
-    mol_conformers = mol.GetConformers()
-    assert len(mol_conformers) == 1
-    atomicnum_list = [atom.GetAtomicNum() for atom in mol.GetAtoms()]
-    geom = mol_conformers[0].GetPositions()
+# Draw Figures
+def draw_heatmap(x_labels, y_labels, values, title="None", figure_size=(40, 6), min_value = 0.0, max_value = 1):
+    """Draws a heatmap using seaborn"""
+    import seaborn as sns
+    sns.set()
+    # Set font to Arial
 
-    # 正方体边长和总点数
-    num = num_per_axis
-    radius /= 2
-    cube_length = 2 * radius
-    total_points = num * num * num 
-    count_num = count_per_axis[0] * count_per_axis[1] * count_per_axis[2]
-    counts = np.zeros(count_num, dtype=np.int32)
-    counts_num_each = np.zeros(count_num, dtype=np.int32)
+    plt.rcParams['font.sans-serif']='Arial'
 
-    # 生成均匀的网格点
-    x = np.linspace(0.1 -radius, radius - 0.1, num)
-    y = x; z = x
-    # 生成点
-    points = np.array(np.meshgrid(x, y, z)).T.reshape(-1, 3)
-    points_inside = np.zeros(total_points, dtype=bool)
-    # 计算每个点到每个原子中心的距离
-    for atom_id, (atomic_num, sphere_center) in enumerate(zip(atomicnum_list, geom)):
-        if atom_id in excluded_atoms_ids:
+    uniform_data = values # Set 2D matrix
+    f, ax = plt.subplots(figsize=figure_size)
+    annot_kws = {"fontsize": 30}
+    # Heatmap parameters: vmin/vmax for colorbar range, annot for values, linewidths for grid
+    sns.heatmap(uniform_data, ax=ax,vmin=min_value,vmax=max_value,cmap='Blues',linewidths=2,cbar=True, annot=True,annot_kws=annot_kws, fmt='.3f')
+
+    ax.set_title(title, fontsize=40) # Set title
+    ax.set_xticklabels(x_labels, fontsize=30)
+    ax.set_yticklabels(y_labels, fontsize=30)
+    # Set label rotations
+    label_y =  ax.get_yticklabels()
+    plt.setp(label_y, rotation=0, horizontalalignment='right')
+    label_x =  ax.get_xticklabels()
+    plt.setp(label_x, rotation=0, horizontalalignment='center')
+    plt.savefig('test.svg', format='svg')
+    plt.show()
+    return plt
+
+def calc_distribution2(y, eachsize=0.01, title=None, xlab=None, ylab="Count", y_max=None, y_min=None, color="green"):
+    if y_max == None:    y_max = np.max(y)
+    if y_min == None:    y_min = np.min(y)
+    X = np.arange(y_min, y_max + eachsize, eachsize)
+    des = [0 for each in X]
+    z = (y - y_min)/eachsize
+    for each in z:
+        try:
+            des[int(each)] += 1
+        except:
             continue
-        radii = table.GetRvdw(atomic_num)
-        translated_points = points - sphere_center
-        distances = np.linalg.norm(translated_points, axis=1)
-        points_inside = points_inside | (distances <= radii)
-    if count_per_axis == None:
-        return points_inside
-    for i in range(count_num):
-        x_id = i // (count_per_axis[1] * count_per_axis[2]) % count_per_axis[0]
-        y_id = i // (count_per_axis[2]) % count_per_axis[1]
-        z_id = i % count_per_axis[2]
-        x_range =  [- radius + 2 * x_id * radius / count_per_axis[0], - radius + 2 * (x_id + 1) * radius / count_per_axis[0]]
-        y_range =  [- radius + 2 * y_id * radius / count_per_axis[1], - radius + 2 * (y_id + 1) * radius / count_per_axis[1]]
-        z_range =  [- radius + 2 * z_id * radius / count_per_axis[2], - radius + 2 * (z_id + 1) * radius / count_per_axis[2]]
-        counts[i] = np.sum(points_inside[np.all([points[:, 0] >= x_range[0], points[:, 1] >= y_range[0], points[:, 2] >= z_range[0], points[:, 0] <= x_range[1], points[:, 1] <= y_range[1], points[:, 2] <= z_range[1]], axis=0)])
-        counts_num_each[i] = np.sum(np.all([points[:, 0] >= x_range[0], points[:, 1] >= y_range[0], points[:, 2] >= z_range[0], points[:, 0] <= x_range[1], points[:, 1] <= y_range[1], points[:, 2] <= z_range[1]], axis=0))
-    counts = counts / counts_num_each
+    des = np.array(des)
+    # des = des / len(y)
     
-    return counts.tolist()
+    fig = plt.figure(figsize=(4,3))
+    ax = fig.add_subplot(111)
+    ax.patch.set_alpha(0.0)
+    plt.bar(X, des, width=eachsize/2, color=color)
+    plt.xlim(y_min - eachsize, y_max + eachsize)
+    plt.ylim(0, np.max(des) * 1.2)
+    plt.xlabel(xlab, fontsize=30)
+    plt.ylabel(ylab, fontsize=30)
+    plt.xticks(fontsize=15)
+    plt.yticks(fontsize=15)
+    if title != None:
+        plt.title = title
+    plt.tight_layout()
+    plt.savefig("test.png", format="png", dpi=300, bbox_inches='tight')
+    plt.show()
+    return des
+
+def plot_scatter_with_metrics(x, y, title=None, min_=-10, max_=60, figsize = (5,5)):
+    """
+    绘制散点图并显示回归性能指标
+    
+    参数：
+    x: 一维数组类型，表示x轴数据。
+    y: 一维数组类型，表示y轴数据。
+    title: 字符串类型，表示图的标题。
+    
+    返回值：
+    None
+    
+    """
+    # 计算回归性能指标
+    r2 = r2_score(x, y)
+    mae = mean_absolute_error(x, y)
+    mse = mean_squared_error(x, y)
+
+    # 绘制散点图
+    plt.figure(figsize=figsize, facecolor='white')
+    plt.xlim(min_, max_)
+    plt.ylim(min_, max_)
+    plt.xticks(fontsize=24)
+    plt.yticks(fontsize=24)
+    # plt.xlabel("Real", fontsize=18)
+    # plt.ylabel("Prediction", fontsize=18)
+    if title != None:
+        plt.title("%s\nR2:%.3f, MAE:%.3f, MSE:%.3f" % (title, r2, mae, mse), fontsize=24)
+        plt.title("%s"%title,fontsize=24)
+    z = np.linspace(min_, max_, 10000)
+    plt.plot(z, z)
+
+    # plt.scatter(x, y, marker="*", c="g")
+    sns.kdeplot(x=x, y=y, cmap="Blues", shade=True, bw_adjust=1, thresh=0.01)
+    # 添加回归性能指标到图像的第二行
+    
+    # 显示图像
+    plt.savefig("test.png", format="png", dpi=300, bbox_inches='tight')
+    plt.show()

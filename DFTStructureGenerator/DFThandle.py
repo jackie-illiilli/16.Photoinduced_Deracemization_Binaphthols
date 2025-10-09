@@ -564,28 +564,3 @@ def normalize_axis(arr, axis=0, mean=[], std=[]):
     normalized_arr = np.nan_to_num(normalized_arr, 0)
     return normalized_arr, mean, std
 
-def draw_heatmap(x_labels, y_labels, values, title="None", figure_size=(40, 6), min_value = 0.0, max_value = 1):
-    """Draws a heatmap using seaborn"""
-    import seaborn as sns
-    sns.set()
-    # Set font to Arial
-
-    plt.rcParams['font.sans-serif']='Arial'
-
-    uniform_data = values # Set 2D matrix
-    f, ax = plt.subplots(figsize=figure_size)
-    annot_kws = {"fontsize": 30}
-    # Heatmap parameters: vmin/vmax for colorbar range, annot for values, linewidths for grid
-    sns.heatmap(uniform_data, ax=ax,vmin=min_value,vmax=max_value,cmap='Blues',linewidths=2,cbar=True, annot=True,annot_kws=annot_kws, fmt='.3f')
-
-    ax.set_title(title, fontsize=40) # Set title
-    ax.set_xticklabels(x_labels, fontsize=30)
-    ax.set_yticklabels(y_labels, fontsize=30)
-    # Set label rotations
-    label_y =  ax.get_yticklabels()
-    plt.setp(label_y, rotation=0, horizontalalignment='right')
-    label_x =  ax.get_xticklabels()
-    plt.setp(label_x, rotation=0, horizontalalignment='center')
-    plt.savefig('test.svg', format='svg')
-    plt.show()
-    return plt
