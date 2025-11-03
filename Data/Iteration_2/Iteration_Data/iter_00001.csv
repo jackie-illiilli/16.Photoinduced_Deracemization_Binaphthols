@@ -1,51 +1,51 @@
-Binol,Ligand,Binol_smiles,Ligand_smiles,Binol_conf_id,Ligand_conf_id,Binol_Sites,Ligand_Sites,Binol_G,Ligand_G
-0,1005,Oc1ccc2ccccc2c1-c1c(O)ccc2ccccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,0 13,27 4,-920.1839287,-1995.694324
-62,1005,Oc1cc(C2CCCCC2)c2ccccc2c1-c1c(O)cc(C2CCCCC2)c2ccccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,0 19,27 4,-1388.945446,-1995.694324
-121,1005,Oc1ccc2ccccc2c1-c1c(O)ccc2cc(-c3ccccc3)ccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,1,1,0 13,27 4,-1151.019629,-1995.694324
-66,1005,COc1ccc(-c2cc(O)c(-c3c(O)cc(-c4ccc(OC)cc4)c4ccccc34)c3ccccc23)cc1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,9 13,27 4,-1610.672436,-1995.694324
-63,1005,Oc1cc(-c2ccccc2)c2ccccc2c1-c1c(O)cc(-c2ccccc2)c2ccccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,0 19,27 4,-1381.850264,-1995.694324
-91,1005,Oc1c(-c2c(O)c3ccccc3c3ccccc23)c2ccccc2c2ccccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,0 5,27 4,-1227.19924,-1995.694324
-45,1005,Oc1ccc2cc(-c3ccccc3)ccc2c1-c1c(O)ccc2cc(-c3ccccc3)ccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,1,1,0 19,27 4,-1381.855284,-1995.694324
-0,1200,Oc1ccc2ccccc2c1-c1c(O)ccc2ccccc12,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,0 13,34 22,-920.1839287,-1924.267304
-36,1005,CCCCc1ccc2c(-c3c(O)ccc4cc(CCCC)ccc34)c(O)ccc2c1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,11 25,27 4,-1234.271879,-1995.694324
-128,1200,Oc1c(-c2c3ccccc3cc3ccccc23)cc2ccccc2c1-c1c(O)c(-c2c3ccccc3cc3ccccc23)cc2ccccc12,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,1,0,0 27,34 22,-1995.854406,-1924.267304
-128,1005,Oc1c(-c2c3ccccc3cc3ccccc23)cc2ccccc2c1-c1c(O)c(-c2c3ccccc3cc3ccccc23)cc2ccccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,1,1,0 27,27 4,-1995.854406,-1995.694324
-35,1005,CC(C)c1ccc2c(-c3c(O)ccc4cc(C(C)C)ccc34)c(O)ccc2c1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,10 23,27 4,-1155.752048,-1995.694324
-121,1200,Oc1ccc2ccccc2c1-c1c(O)ccc2cc(-c3ccccc3)ccc12,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,1,0,0 13,34 22,-1151.019629,-1924.267304
-0,1011,Oc1ccc2ccccc2c1-c1c(O)ccc2ccccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCCC3)=N[C@H]2c2ccccc2)cc1,0,3,0 13,9 30,-920.1839287,-1650.634597
-121,1011,Oc1ccc2ccccc2c1-c1c(O)ccc2cc(-c3ccccc3)ccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCCC3)=N[C@H]2c2ccccc2)cc1,1,3,0 13,9 30,-1151.019629,-1650.634597
-47,1005,CC(C)(C)c1cc(-c2ccc3c(-c4c(O)ccc5cc(-c6cc(C(C)(C)C)cc(C(C)(C)C)c6)ccc45)c(O)ccc3c2)cc(C(C)(C)C)c1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,14 38,27 4,-2010.021302,-1995.694324
-63,1200,Oc1cc(-c2ccccc2)c2ccccc2c1-c1c(O)cc(-c2ccccc2)c2ccccc12,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,0 19,34 22,-1381.850264,-1924.267304
-66,1200,COc1ccc(-c2cc(O)c(-c3c(O)cc(-c4ccc(OC)cc4)c4ccccc34)c3ccccc23)cc1,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,9 13,34 22,-1610.672436,-1924.267304
-62,1200,Oc1cc(C2CCCCC2)c2ccccc2c1-c1c(O)cc(C2CCCCC2)c2ccccc12,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,0 19,34 22,-1388.945446,-1924.267304
-23,1200,CC(C)(C)c1cc(-c2cc3ccccc3c(-c3c(O)c(-c4cc(C(C)(C)C)cc(C(C)(C)C)c4)cc4ccccc34)c2O)cc(C(C)(C)C)c1,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,2,0,18 42,34 22,-2010.013435,-1924.267304
-91,1200,Oc1c(-c2c(O)c3ccccc3c3ccccc23)c2ccccc2c2ccccc12,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,0 5,34 22,-1227.19924,-1924.267304
-32,1005,Oc1ccc2cc(OCc3ccccc3)ccc2c1-c1c(O)ccc2cc(OCc3ccccc3)ccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,0 21,27 4,-1610.670859,-1995.694324
-63,1011,Oc1cc(-c2ccccc2)c2ccccc2c1-c1c(O)cc(-c2ccccc2)c2ccccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCCC3)=N[C@H]2c2ccccc2)cc1,0,3,0 19,9 30,-1381.850264,-1650.634597
-0,1136,Oc1ccc2ccccc2c1-c1c(O)ccc2ccccc12,CC1(C)O[C@H](C([O-])(c2ccccc2)c2ccccc2)[C@@H](C([O-])(c2ccccc2)c2ccccc2)O1,0,3,0 13,,-920.1839287,-1497.557147
-46,1005,Cc1ccc(-c2ccc3c(-c4c(O)ccc5cc(-c6ccc(C)cc6)ccc45)c(O)ccc3c2)cc1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,12 29,27 4,-1460.386859,-1995.694324
-1,1005,COc1cc2ccccc2c(-c2c(O)c(OC)cc3ccccc23)c1O,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,13 25,27 4,-1149.000246,-1995.694324
-21,1200,Cc1cc(C)c(-c2cc3ccccc3c(-c3c(O)c(-c4c(C)cc(C)cc4C)cc4ccccc34)c2O)c(C)c1,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,17 36,34 22,-1617.439452,-1924.267304
-56,1005,Cc1ccc2ccc(O)c(-c3c(O)ccc4ccc(C)cc34)c2c1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,8 12,27 4,-998.7145586,-1995.694324
-36,1200,CCCCc1ccc2c(-c3c(O)ccc4cc(CCCC)ccc34)c(O)ccc2c1,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,11 25,34 22,-1234.271879,-1924.267304
-44,1005,COc1ccc(-c2ccc3c(-c4c(O)ccc5cc(-c6ccc(OC)cc6)ccc45)c(O)ccc3c2)cc1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,13 31,27 4,-1610.677244,-1995.694324
-128,1136,Oc1c(-c2c3ccccc3cc3ccccc23)cc2ccccc2c1-c1c(O)c(-c2c3ccccc3cc3ccccc23)cc2ccccc12,CC1(C)O[C@H](C([O-])(c2ccccc2)c2ccccc2)[C@@H](C([O-])(c2ccccc2)c2ccccc2)O1,1,3,0 27,,-1995.854406,-1497.557147
-45,1011,Oc1ccc2cc(-c3ccccc3)ccc2c1-c1c(O)ccc2cc(-c3ccccc3)ccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCCC3)=N[C@H]2c2ccccc2)cc1,1,3,0 19,9 30,-1381.855284,-1650.634597
-35,1200,CC(C)c1ccc2c(-c3c(O)ccc4cc(C(C)C)ccc34)c(O)ccc2c1,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,10 23,34 22,-1155.752048,-1924.267304
-0,1095,Oc1ccc2ccccc2c1-c1c(O)ccc2ccccc12,CC(C)[C@H]1CN(c2ccc(C(F)(F)F)cc2)C(C2=N[C@@H](C(C)C)CN2c2ccc(C(F)(F)F)cc2)=N1,0,0,0 13,24 18 35 5,-920.1839287,-1824.017689
-57,1005,CC(C)c1ccc2ccc(O)c(-c3c(O)ccc4ccc(C(C)C)cc34)c2c1,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,0,1,10 14,27 4,-1155.75372,-1995.694324
-122,1136,Oc1c(-c2ccc(Cl)cc2)cc2ccccc2c1-c1c(O)c(-c2ccc(Cl)cc2)cc2ccccc12,CC1(C)O[C@H](C([O-])(c2ccccc2)c2ccccc2)[C@@H](C([O-])(c2ccccc2)c2ccccc2)O1,1,3,0 20,,-2300.820508,-1497.557147
-13,1200,C[Si](C)(C)c1cc2ccccc2c(-c2c(O)c([Si](C)(C)C)cc3ccccc23)c1O,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,3,0,15 29,34 22,-1737.053674,-1924.267304
-25,1005,Oc1c(-c2ccc3ccccc3c2)cc2ccccc2c1-c1c(O)c(-c2ccc3ccccc3c2)cc2ccccc12,CC(C)(C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1)C1=N[C@@H](c2ccccc2)C(c2ccccc2)(c2ccccc2)O1,2,1,0 23,27 4,-1688.860782,-1995.694324
-57,1200,CC(C)c1ccc2ccc(O)c(-c3c(O)ccc4ccc(C(C)C)cc34)c2c1,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,10 14,34 22,-1155.75372,-1924.267304
-0,1032,Oc1ccc2ccccc2c1-c1c(O)ccc2ccccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCC3)=N[C@H]2c2ccccc2)cc1,0,0,0 13,9 29,-920.1839287,-1611.364108
-36,1011,CCCCc1ccc2c(-c3c(O)ccc4cc(CCCC)ccc34)c(O)ccc2c1,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCCC3)=N[C@H]2c2ccccc2)cc1,0,3,11 25,9 30,-1234.271879,-1650.634597
-121,1032,Oc1ccc2ccccc2c1-c1c(O)ccc2cc(-c3ccccc3)ccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCC3)=N[C@H]2c2ccccc2)cc1,1,0,0 13,9 29,-1151.019629,-1611.364108
-62,1011,Oc1cc(C2CCCCC2)c2ccccc2c1-c1c(O)cc(C2CCCCC2)c2ccccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCCC3)=N[C@H]2c2ccccc2)cc1,0,3,0 19,9 30,-1388.945446,-1650.634597
-122,1200,Oc1c(-c2ccc(Cl)cc2)cc2ccccc2c1-c1c(O)c(-c2ccc(Cl)cc2)cc2ccccc12,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,1,0,0 20,34 22,-2300.820508,-1924.267304
-0,1020,Oc1ccc2ccccc2c1-c1c(O)ccc2ccccc12,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CC3)=N[C@H]2c2ccccc2)cc1,0,0,0 13,9 27,-920.1839287,-1532.815707
-121,1136,Oc1ccc2ccccc2c1-c1c(O)ccc2cc(-c3ccccc3)ccc12,CC1(C)O[C@H](C([O-])(c2ccccc2)c2ccccc2)[C@@H](C([O-])(c2ccccc2)c2ccccc2)O1,1,3,0 13,,-1151.019629,-1497.557147
-47,1011,CC(C)(C)c1cc(-c2ccc3c(-c4c(O)ccc5cc(-c6cc(C(C)(C)C)cc(C(C)(C)C)c6)ccc45)c(O)ccc3c2)cc(C(C)(C)C)c1,c1ccc([C@H]2OC(C3(C4=N[C@@H](c5ccccc5)[C@@H](c5ccccc5)O4)CCCCC3)=N[C@H]2c2ccccc2)cc1,0,3,14 38,9 30,-2010.021302,-1650.634597
-1,1200,COc1cc2ccccc2c(-c2c(O)c(OC)cc3ccccc23)c1O,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,13 25,34 22,-1149.000246,-1924.267304
-3,1200,CC(C)c1cc2ccccc2c(-c2c(O)c(C(C)C)cc3ccccc23)c1O,CC(C)(C)c1ccc(CC(Cc2ccc(C(C)(C)C)cc2)(C2=N[C@@H]3c4ccccc4C[C@@H]3O2)C2=N[C@@H]3c4ccccc4C[C@@H]3O2)cc1,0,0,14 27,34 22,-1155.752613,-1924.267304
-63,1136,Oc1cc(-c2ccccc2)c2ccccc2c1-c1c(O)cc(-c2ccccc2)c2ccccc12,CC1(C)O[C@H](C([O-])(c2ccccc2)c2ccccc2)[C@@H](C([O-])(c2ccccc2)c2ccccc2)O1,0,3,0 19,,-1381.850264,-1497.557147
+Binol,Ligand
+1,1060
+7,1060
+24,1060
+9,1060
+8,1060
+25,1060
+15,1060
+1,1075
+13,1060
+43,1075
+43,1060
+12,1060
+24,1075
+1,1113
+24,1113
+17,1060
+8,1075
+9,1075
+7,1075
+35,1075
+25,1075
+11,1060
+8,1113
+1,1164
+16,1060
+2,1060
+39,1075
+20,1060
+13,1075
+14,1060
+43,1164
+15,1113
+12,1075
+1,1042
+21,1060
+30,1164
+5,1075
+42,1060
+21,1075
+1,1114
+13,1113
+24,1114
+7,1113
+30,1075
+1,1115
+24,1164
+17,1113
+2,1075
+4,1075
+8,1164

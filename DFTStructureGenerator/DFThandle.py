@@ -266,7 +266,7 @@ def load_and_prepare_mol(ligand_idx: int, conf_id: int, mol_dir: str, dft_dir: s
     return mol, log
 
 
-def prepare_ligand_for_cu(mol: Chem.Mol, sites: list[int]) -> Chem.Mol:
+def prepare_ligand_for_cu(mol, sites):
     """
     Prepares Ligand-type molecule for Cu coordination: adds dummy O atom, sets charges, and optimizes.
     
