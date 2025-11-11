@@ -61,7 +61,7 @@ Index,Smiles,Type,Sites,conf_id,G/Hatree
 60,CCC[C@H]1CC[C@H](c2ccc(-c3cc4ccccc4c(-c4c(O)c(-c5ccc([C@H]6CC[C@H](CCC)CC6)cc5)cc5ccccc45)c3O)cc2)CC1,Binol,22 47,0,-2086.155532
 61,CC(C)(C)c1ccc(-c2ccc(-c3cc4ccccc4c(-c4c(O)c(-c5ccc(-c6ccc(C(C)(C)C)cc6)cc5)cc5ccccc45)c3O)cc2)cc1,Binol,23 49,2,-2157.605648
 62,CC1(C)c2ccccc2-c2ccc(-c3cc4ccccc4c(-c4c(O)c(-c5ccc6c(c5)C(C)(C)c5ccccc5-6)cc5ccccc45)c3O)cc21,Binol,24 49,0,-2076.740403
-63,Oc1c(-c2ccc3c(c2)C2(CCCCC2)c2ccccc2-3)cc2ccccc2c1-c1c(O)c(-c2ccc3c(c2)C2(CCCCC2)c2ccccc2-3)cc2ccccc12,Binol,0 31,0,-2309.924363
+63,Oc1c(-c2ccc3c(c2)C2(CCC2)c2ccccc2-3)cc2ccccc2c1-c1c(O)c(-c2ccc3c(c2)C2(CCC2)c2ccccc2-3)cc2ccccc12,Binol,0 29,0,-2152.83398
 64,Oc1c(-c2cccc3c2oc2c(-c4ccccc4)cccc23)cc2ccccc2c1-c1c(O)c(-c2cccc3c2oc2c(-c4ccccc4)cccc23)cc2ccccc12,Binol,0 32,0,-2453.188599
 65,Oc1c(-c2ccccc2)cc2ccc(-c3ccccc3)cc2c1-c1c(O)c(-c2ccccc2)cc2ccc(-c3ccccc3)cc12,Binol,0 25,1,-1843.526082
 1001,CC(C)(C1=N[C@@H](C(C)(C)C)CO1)C1=N[C@@H](C(C)(C)C)CO1,Ligand_Box,4 13,3,-924.7872077

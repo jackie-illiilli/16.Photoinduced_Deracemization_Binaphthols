@@ -575,15 +575,15 @@ def read_reaction_csv(file_path = "Data/Second_result copy.csv", target_csv="Dat
 def descriptor_to_array(df, descriptor_map, dicts=[]):
     desc_array = []
     for line_id, line in df.iterrows():
-        L_Smiles = line['Ligand_smiles']
-        Bip_Smiles = line['Binol_smiles']
+        # L_Smiles = line['Ligand_smiles']
+        # Bip_Smiles = line['Binol_smiles']
         L_id = line['Ligand']
         B_id = line['Binol']
         L_list, Bip_list, L_dict, B_dict = [], [], [], []
         all_array = np.array([])
-        if descriptor_map != None:
-            L_list = np.array(descriptor_map[L_Smiles])
-            Bip_list = np.array(descriptor_map[Bip_Smiles])
+        # if descriptor_map != None:
+        #     L_list = np.array(descriptor_map[L_Smiles])
+        #     Bip_list = np.array(descriptor_map[Bip_Smiles])
         if len(dicts) != 0:
             for each_dict in dicts:
                 L_dict = each_dict[L_id]

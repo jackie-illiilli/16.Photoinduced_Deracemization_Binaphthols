@@ -1,0 +1,2 @@
+sbatch xtb_0_0.pbs
+sbatch xtb_0_1.pbs
