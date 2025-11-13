@@ -4,7 +4,6 @@ from rdkit.Chem import AllChem
 import numpy as np
 from tqdm import tqdm
 import pandas as pd
-from matplotlib import pyplot as plt
 from . import logfile_process, FormatConverter, xtb_process
 
 def Single_Xtb(root_file, result_file, shift_to_sugan=False):
