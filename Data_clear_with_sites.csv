@@ -64,6 +64,14 @@ Index,Smiles,Type,Sites,conf_id,G/Hatree
 63,Oc1c(-c2ccc3ccccc3c2)cc2ccccc2c1-c1c(O)c(-c2ccc3ccccc3c2)cc2ccccc12,Binol,0 23,2,-1688.860782
 64,Oc1c(-c2c3ccccc3cc3ccccc23)cc2ccccc2c1-c1c(O)c(-c2c3ccccc3cc3ccccc23)cc2ccccc12,Binol,0 27,1,-1995.854406
 65,Oc1c(-c2ccc(-c3ccc4ccccc4c3)cc2)cc2ccccc2c1-c1c(O)c(-c2ccc(-c3ccc4ccccc4c3)cc2)cc2ccccc12,Binol,0 29,1,-2150.531823
+66,Cc1cccc(O)c1-c1c(O)ccc2ccccc12,Binol,6 10,0,-805.943856
+67,Cc1cccc(O)c1-c1c(O)c(-c2ccccc2)cc2ccccc12,Binol,6 10,0,-1036.777764
+68,Oc1ccc2c(c1-c1c(O)ccc3ccccc13)CCCC2,Binol,0 9,0,-922.545825
+69,Cc1ccc(C)c(-c2c(O)ccc3ccccc23)c1O,Binol,9 19,0,-845.209314
+70,COCc1cc2ccccc2c(-c2c(O)c(COC)cc3ccccc23)c1O,Binol,14 27,0,-1227.517657
+71,COc1ccc(-c2ccc3c(-c4c(O)ccc5cc(-c6ccccc6)ccc45)c(O)ccc3c2)cc1,Binol,13 29,0,-1496.266233
+72,COc1ccc(-c2ccc3ccc(O)c(-c4c(O)ccc5cc(-c6ccccc6)ccc45)c3c2)cc1,Binol,13 17,2,-1496.267437
+73,COc1ccc(-c2cc3ccccc3c(-c3c(O)ccc4cc(-c5ccccc5)ccc34)c2O)cc1,Binol,17 33,0,-1496.264811
 1001,CC(C)(C1=N[C@@H](C(C)(C)C)CO1)C1=N[C@@H](C(C)(C)C)CO1,Ligand_Box,4 13,3,-924.7872077
 1002,CC(C)(C)[C@@H]1COC(C2(C3=N[C@H](C(C)(C)C)CO3)CCCCC2)=N1,Ligand_Box,10 23,0,-1041.378417
 1003,CC(C)(C)[C@H]1COC(C2(C3=N[C@@H](C(C)(C)C)CO3)CCCC2)=N1,Ligand_Box,10 22,2,-1002.119896
@@ -242,3 +250,7 @@ Index,Smiles,Type,Sites,conf_id,G/Hatree
 1176,O=C(N[C@@H](c1ccccc1)[C@@H](NC(=O)c1ccccc1P(c1ccccc1)c1ccccc1)c1ccccc1)c1ccccc1P(c1ccccc1)c1ccccc1,Ligand_Other,2 11,0,-2947.2013
 1177,O=S(=O)(N[C@@H](c1ccccc1)[C@@H](NS(=O)(=O)C(F)(F)F)c1ccccc1)C(F)(F)F,Ligand_Other,3 12,0,-2422.191334
 1178,[O-]c1ccccc1/C=N/[C@@H](c1ccccc1)[C@@H](/N=C/c1ccccc1[O-])c1ccccc1,Ligand_Other,8 17,0,-1338.945921
+74,Oc1ccc2cc(-c3ccccc3)ccc2c1-c1c(O)ccc2cc(C3CCCCC3)ccc12,Binol,0 19,2,-1385.40336859
+75,Oc1ccc2cc(-c3ccccc3)ccc2c1-c1c(O)c(-c2ccccc2)cc2ccccc12,Binol,0 19,0,-1381.85362565
+76,Cc1c(O)c(-c2c(O)c(C)c(C)c3[nH]c4ccccc4c23)c2c([nH]c3ccccc32)c1C,Binol,3 7,0,-1340.17200042
+77,Cc1c(O)c(-c2c(O)c(C)c(C)c3c2c2ccccc2n3C)c2c3ccccc3n(C)c2c1C,Binol,3 7,0,-1418.67512194

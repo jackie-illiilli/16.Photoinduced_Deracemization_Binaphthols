@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -p amd_512
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 28
+
+root=`pwd`
+rootdir=charg_0_0
+folders=`ls $root/$rootdir/`
+for folder in $folders
+do
+    cd $root/$rootdir/$folder
+    crest $folder.xyz -T 28 -gfn2 -chrg 0 -uhf 0 -rthr 0.25 -shake 1 --mdlen 0.5 > crest.out
+done

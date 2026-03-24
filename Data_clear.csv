@@ -166,3 +166,15 @@ Index,Smiles,Type
 1166,CC1(C)O[C@@H](C([O-])(c2cccc3ccccc23)c2cccc3ccccc23)[C@H](C([O-])(c2cccc3ccccc23)c2cccc3ccccc23)O1,Ligand_Other
 1167,[O-]C(c1ccccc1)(c1ccccc1)[C@H]1OC2(CCCCC2)O[C@@H]1C([O-])(c1ccccc1)c1ccccc1,Ligand_Other
 1168,CC1(C)O[C@@H](C[O-])[C@H](C[O-])O1,Ligand_Other
+64,Cc1cccc(O)c1-c1c(O)ccc2ccccc12,Binol
+65,Cc1cccc(O)c1-c1c(O)c(-c2ccccc2)cc2ccccc12,Binol
+66,Oc1ccc2c(c1-c1c(O)ccc3ccccc13)CCCC2,Binol
+67,Cc1ccc(C)c(-c2c(O)ccc3ccccc23)c1O,Binol
+68,COCc1cc2ccccc2c(-c2c(O)c(COC)cc3ccccc23)c1O,Binol
+69,COc1ccc(-c2ccc3c(-c4c(O)ccc5cc(-c6ccccc6)ccc45)c(O)ccc3c2)cc1,Binol
+70,COc1ccc(-c2ccc3ccc(O)c(-c4c(O)ccc5cc(-c6ccccc6)ccc45)c3c2)cc1,Binol
+71,COc1ccc(-c2cc3ccccc3c(-c3c(O)ccc4cc(-c5ccccc5)ccc34)c2O)cc1,Binol
+74,Oc1ccc2cc(-c3ccccc3)ccc2c1-c1c(O)ccc2cc(C3CCCCC3)ccc12,Binol
+75,Oc1ccc2cc(-c3ccccc3)ccc2c1-c1c(O)c(-c2ccccc2)cc2ccccc12,Binol
+76,Cc1c(O)c(-c2c(O)c(C)c(C)c3[nH]c4ccccc4c23)c2c([nH]c3ccccc32)c1C,Binol
+77,Cc1c(O)c(-c2c(O)c(C)c(C)c3c2c2ccccc2n3C)c2c3ccccc3n(C)c2c1C,Binol
