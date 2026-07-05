@@ -571,7 +571,7 @@ def read_reaction_csv(file_path = "Data/Second_result copy.csv", target_csv="Dat
     data_csv["Binol_smiles"] = [smiles_csv["Smiles"][indexs.index(each["Binol"])] for id, each in data_csv.iterrows()]
     data_csv["Ligand_smiles"] = [smiles_csv["Smiles"][indexs.index(each["Ligand"])] for id, each in data_csv.iterrows()]
     return data_csv
-def descriptor_to_array(df, descriptor_map, dicts=[]):
+def descriptor_to_array(df, dicts=[], keep=None):
     desc_array = []
     for line_id, line in df.iterrows():
         # L_Smiles = line['Ligand_smiles']
@@ -580,9 +580,6 @@ def descriptor_to_array(df, descriptor_map, dicts=[]):
         B_id = line['Binol']
         L_list, Bip_list, L_dict, B_dict = [], [], [], []
         all_array = np.array([])
-        # if descriptor_map != None:
-        #     L_list = np.array(descriptor_map[L_Smiles])
-        #     Bip_list = np.array(descriptor_map[Bip_Smiles])
         if len(dicts) != 0:
             for each_dict in dicts:
                 L_dict = each_dict[L_id]
@@ -591,6 +588,8 @@ def descriptor_to_array(df, descriptor_map, dicts=[]):
         all_array = np.concatenate((all_array, L_list, Bip_list), axis=0)
         desc_array.append(all_array)
     desc_array = np.array(desc_array)
+    if keep != None:
+        desc_array = desc_array[:, keep]
     return desc_array
 def get_reverse_result(desc_arrays):
     first_num = len(desc_arrays[0]) - 64

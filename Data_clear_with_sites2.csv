@@ -1,3 +1,4 @@
 Index,Smiles,Type,Sites,conf_id,G/Hatree
-76,Cc1c(O)c(-c2c(O)c(C)c(C)c3[nH]c4ccccc4c23)c2c([nH]c3ccccc32)c1C,Binol,3 7,0,-1340.1720004200001
-77,Cc1c(O)c(-c2c(O)c(C)c(C)c3c2c2ccccc2n3C)c2c3ccccc3n(C)c2c1C,Binol,3 7,0,-1418.67512194
+79,Oc1ccc2ccccc2c1-c1c(O)ccc2cc(COCc3ccccc3)ccc12,Binol,0 13,0,-1304.6856675
+80,CCCCCCOc1ccc(OCCCCCC)c(-c2ccc3c(-c4c(O)ccc5cc(-c6cc(OCCCCCC)ccc6OCCCCCC)ccc45)c(O)ccc3c2)c1,Binol,26 56,0,-2624.7095428000002
+81,CCCCCCOc1ccc(OCCCCCC)c(-c2cc3ccccc3c(-c3c(O)c(-c4cc(OCCCCCC)ccc4OCCCCCC)cc4ccccc34)c2O)c1,Binol,30 60,2,-2624.71257448
